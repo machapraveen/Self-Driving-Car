@@ -87,8 +87,42 @@ The `model.h5` file was trained using [briefly describe your training process an
 
 ## Contributing
 
-[Include instructions for how others can contribute to your project, if applicable]
+We welcome contributions to improve the Self-Driving Car Simulator Project! Here's how you can contribute:
+
+1.Fork the repository on GitHub.
+2.Clone your forked repository to your local machine.
+3.Create a new branch for your feature or bug fix.
+4.Make your changes and commit them with clear, descriptive commit messages.
+5.Push your changes to your fork on GitHub.
+6.Submit a pull request to the main repository.
+
+Please ensure your code adheres to the existing style of the project to maintain consistency. Also, make sure to update the README.md with details of changes to the interface, including new environment variables, exposed ports, useful file locations, and container parameters.
+
+## Reporting Issues
+If you find a bug or have a suggestion for improvement:
+
+Check the GitHub Issues to see if the bug or suggestion has already been reported.
+If not, open a new issue. Clearly describe the issue or suggestion, including steps to reproduce when it is a bug.
+
+Thank you for your contributions to make this project better!
 
 ## License
 
-[Include your license information here]
+This project is licensed under the MIT License - see below for details:
+MIT License
+Copyright (c) [2024] [MachaPraveen]
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
