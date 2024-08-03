@@ -1,11 +1,26 @@
 # Self-Driving Car Simulator Project
 
-This project uses a trained neural network model to autonomously drive a car in the Udacity Self-Driving Car Simulator.
+This project implements an autonomous driving system using a neural network model to control a car in the Udacity Self-Driving Car Simulator.
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Prerequisites](#prerequisites)
+3. [Project Structure](#project-structure)
+4. [Installation and Setup](#installation-and-setup)
+5. [Running the Simulator](#running-the-simulator)
+6. [Model Training](#model-training)
+7. [Troubleshooting](#troubleshooting)
+8. [Contributing](#contributing)
+9. [License](#license)
+
+## Project Overview
+
+This project uses a trained convolutional neural network (CNN) to predict steering angles for a car in a simulated environment. The model takes images from the car's "camera" as input and outputs appropriate steering commands, allowing the car to navigate autonomously around a track.
 
 ## Prerequisites
 
 - Python 3.8
-- Udacity Self-Driving Car Simulator (available [here](https://github.com/udacity/self-driving-car-sim))
+- Udacity Self-Driving Car Simulator (Download from [here](https://github.com/udacity/self-driving-car-sim))
 - Conda (recommended for environment management)
 
 ## Project Structure
@@ -13,16 +28,19 @@ This project uses a trained neural network model to autonomously drive a car in 
 ```
 self-driving-car-sim/
 │
-├── drive.py
-├── model.h5
-└── README.md
+├── drive.py           # Script to run the model in autonomous mode
+├── model.h5           # Trained Keras model
+├── training.py        # Script used to train the model (if applicable)
+├── utils.py           # Utility functions
+├── requirements.txt   # List of required Python packages
+└── README.md          # This file
 ```
 
-## Setup Instructions
+## Installation and Setup
 
-1. Clone this repository:
+1. Clone the repository:
    ```
-   git clone [Your Repository URL]
+   git clone https://github.com/yourusername/self-driving-car-sim.git
    cd self-driving-car-sim
    ```
 
@@ -34,95 +52,65 @@ self-driving-car-sim/
 
 3. Install the required packages:
    ```
-   pip install tensorflow
-   pip install opencv-python
-   pip install pillow
-   pip install python-socketio==4.6.0
-   pip install python-engineio==3.13.2
-   pip install eventlet
-   pip install flask
+   pip install -r requirements.txt
    ```
-
-4. Ensure that `model.h5` (your trained model) is in the project directory.
 
 ## Running the Simulator
 
-1. Start the drive script:
+1. Ensure your `model.h5` file is in the project directory.
+
+2. Start the drive script:
    ```
    python drive.py
    ```
 
-2. Launch the Udacity Self-Driving Car Simulator.
+3. Launch the Udacity Self-Driving Car Simulator.
 
-3. Select the track you want to test on.
+4. Select the desired track.
 
-4. Click the "Autonomous Mode" button.
+5. Click the "Autonomous Mode" button.
 
-The car should now start driving autonomously using the trained model.
-
-## Troubleshooting
-
-If you encounter issues with conda, try using a virtual environment instead:
-
-1. Create a new virtual environment:
-   ```
-   python -m venv sdcar_venv
-   ```
-
-2. Activate the virtual environment:
-   - On Windows: `sdcar_venv\Scripts\activate`
-   - On macOS and Linux: `source sdcar_venv/bin/activate`
-
-3. Install the required packages as listed in step 3 of the Setup Instructions.
+The car should now drive autonomously using the trained model.
 
 ## Model Training
 
-The `model.h5` file was trained using [briefly describe your training process and data]. For details on the model architecture and training process, refer to [link to your training code or documentation].
+The `model.h5` file contains a pre-trained CNN model. If you wish to train your own model:
 
-## Additional Notes
+1. Collect training data using the Udacity simulator in training mode.
+2. Use the `training.py` script to train the model:
+   ```
+   python training.py
+   ```
 
-- This project uses TensorFlow and Keras for the neural network model.
-- The `drive.py` script interfaces with the Udacity simulator using Socket.IO.
-- Ensure your computer meets the system requirements for running the Udacity Self-Driving Car Simulator.
+Adjust hyperparameters in `training.py` as needed for optimal performance.
+
+## Troubleshooting
+
+- If you encounter "ModuleNotFoundError", ensure all required packages are installed:
+  ```
+  pip install -r requirements.txt
+  ```
+- For issues with TensorFlow, try installing a specific version:
+  ```
+  pip install tensorflow==2.4.1
+  ```
+- If problems persist, try using a virtual environment instead of conda:
+  ```
+  python -m venv sdcar_venv
+  source sdcar_venv/bin/activate  # On Windows use: sdcar_venv\Scripts\activate
+  pip install -r requirements.txt
+  ```
 
 ## Contributing
 
-We welcome contributions to improve the Self-Driving Car Simulator Project! Here's how you can contribute:
+We welcome contributions to improve this project! Here's how you can contribute:
 
-1.Fork the repository on GitHub.
-2.Clone your forked repository to your local machine.
-3.Create a new branch for your feature or bug fix.
-4.Make your changes and commit them with clear, descriptive commit messages.
-5.Push your changes to your fork on GitHub.
-6.Submit a pull request to the main repository.
+1. Fork the repository.
+2. Create a new branch for your feature (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
-Please ensure your code adheres to the existing style of the project to maintain consistency. Also, make sure to update the README.md with details of changes to the interface, including new environment variables, exposed ports, useful file locations, and container parameters.
-
-## Reporting Issues
-If you find a bug or have a suggestion for improvement:
-
-Check the GitHub Issues to see if the bug or suggestion has already been reported.
-If not, open a new issue. Clearly describe the issue or suggestion, including steps to reproduce when it is a bug.
-
-Thank you for your contributions to make this project better!
+Please ensure your code adheres to the project's coding standards and include tests for new features.
 
 ## License
-
-This project is licensed under the MIT License - see below for details:
-MIT License
-Copyright (c) [2024] [MachaPraveen]
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
